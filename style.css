@@ -1,23 +1,10 @@
-.quotebox{
+#quotebox{
 	border: 1px solid black;
 	border-radius: 5px;
   background-color: 	white;
-	margin: auto;
+	/*margin: auto;*/
+	display: block;
 	padding: 20px;
-}
-#newquote{
-	margin: auto;
-}
-@media screen and (min-width: 700px) {
-	.quotebox{
-		width: 50%;
-
-	}
-}
-@media screen and (max-width: 699) {
-	.quotebox{
-		widows: 90%;
-	}
 }
 
 body{
@@ -25,7 +12,7 @@ body{
 	padding:0;
 	font-family:"arial",heletica,sans-serif;
 	font-size:12px;
-    background: #2980b9 url('http://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+    background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
 	-webkit-animation: 10s linear 0s normal none infinite animate;
 	-moz-animation: 10s linear 0s normal none infinite animate;
 	-ms-animation: 10s linear 0s normal none infinite animate;
