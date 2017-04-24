@@ -1,23 +1,10 @@
-.quotebox{
+#quotebox{
 	border: 1px solid black;
 	border-radius: 5px;
   background-color: 	white;
-	margin: auto;
+	/*margin: auto;*/
+	display: block;
 	padding: 20px;
-}
-#newquote{
-	margin: auto;
-}
-@media screen and (min-width: 700px) {
-	.quotebox{
-		width: 50%;
-
-	}
-}
-@media screen and (max-width: 699) {
-	.quotebox{
-		widows: 90%;
-	}
 }
 
 body{
