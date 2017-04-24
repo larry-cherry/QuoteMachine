@@ -2,10 +2,22 @@ $(document).ready(function(){
   console.log("app.js loaded with jquery")
   $('#newquote').on("click", function(e) {
     document.getElementById("newquote").disabled = true;
+    var quote = $.ajax({
+      url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+      type: 'GET',
+    }).done(function(server_data){
+      console.log("success" + server_data);
+      return server_data;
+      // debugger;
+    }).fail(function(jqXHR, textStatus, errorThrown){
+      console.log("fail" + errorThrown);
+      return "There was an issue with your request please try again.";;
+    });
     $('#quote-container').children().addClass("animated fadeOut");
     removeQuote = function() {
       $('#quote-container').children().remove();
-      document.getElementById("quote-container").innerHTML += '<p class="animated fadeIn">Hello World!</p>'
+      debugger;
+      document.getElementById("quote-container").innerHTML += '<div class="animated fadeIn">' + quote["responseJSON"][0]["title"] + '<br>' + quote["responseJSON"][0]["content"] + '</div>'
       setTimeout(enableButton, 100)
     }
     setTimeout(removeQuote, 2000)
