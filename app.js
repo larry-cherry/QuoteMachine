@@ -3,8 +3,9 @@ $(document).ready(function(){
   var getQuote = function() {
     document.getElementById("newquote").disabled = true;
     var quote = $.ajax({
-      url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+      url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
       type: 'GET',
+      cache: false,
     }).done(function(server_data){
       console.log("success" + server_data);
       return server_data;
@@ -26,7 +27,7 @@ $(document).ready(function(){
     }
   }
   getQuote();
-  
+
   $('#newquote').on("click", function(e) {
     getQuote();
   })
