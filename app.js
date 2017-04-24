@@ -1,6 +1,6 @@
 $(document).ready(function(){
   console.log("app.js loaded with jquery")
-  $('#newquote').on("click", function(e) {
+  var getQuote = function() {
     document.getElementById("newquote").disabled = true;
     var quote = $.ajax({
       url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
@@ -16,13 +16,19 @@ $(document).ready(function(){
     $('#quote-container').children().addClass("animated fadeOut");
     removeQuote = function() {
       $('#quote-container').children().remove();
-      debugger;
-      document.getElementById("quote-container").innerHTML += '<div class="animated fadeIn">' + quote["responseJSON"][0]["title"] + '<br>' + quote["responseJSON"][0]["content"] + '</div>'
+      // debugger;
+      document.getElementById("quote-container").innerHTML += '<div class="animated fadeIn text-primary">' + quote["responseJSON"][0]["content"] + '<br>' + '<h3 class="pull-right">' + quote["responseJSON"][0]["title"] + '</h3></div>'
       setTimeout(enableButton, 100)
     }
     setTimeout(removeQuote, 2000)
     enableButton = function() {
       document.getElementById("newquote").disabled = false;
     }
+  }
+  getQuote();
+  
+  $('#newquote').on("click", function(e) {
+    getQuote();
   })
+
 });
