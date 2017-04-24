@@ -17,8 +17,10 @@ $(document).ready(function(){
     $('#quote-container').children().addClass("animated fadeOut");
     removeQuote = function() {
       $('#quote-container').children().remove();
-      // debugger;
-      document.getElementById("quote-container").innerHTML += '<div class="animated fadeIn text-primary">' + quote["responseJSON"][0]["content"] + '<br>' + '<h3 class="pull-right">' + quote["responseJSON"][0]["title"] + '</h3></div>'
+      var es6Quote = `<div class="animated fadeIn text-primary"> ${quote["responseJSON"][0]["content"]}
+       <br><h3 class="pull-right">${quote["responseJSON"][0]["title"]}</h3></div>`;
+      document.getElementById("quote-container").innerHTML += es6Quote;
+      // document.getElementById("quote-container").innerHTML += '<div class="animated fadeIn text-primary">' + quote["responseJSON"][0]["content"] + '<br>' + '<h3 class="pull-right">' + quote["responseJSON"][0]["title"] + '</h3></div>'
       setTimeout(enableButton, 100)
     }
     setTimeout(removeQuote, 2000)
