@@ -14,7 +14,13 @@ html, body{
 .container{
 	margin-top: 20%;
 }
-
+#tweet{
+	border: 1px solid #4099FF;
+	padding: 2px;
+	border-radius: 8px;
+	color: white;
+	background-color: #1DA1F2;
+}
 body{
 	margin:0;
 	padding:0;

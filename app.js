@@ -6,8 +6,13 @@ $(document).ready(function(){
 
   var changeQuote = function(server_data) {
     // debugger;
+    var endOfContent = server_data[0]["content"].length - 5
+    var tweet = `<a id="tweet" class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=${server_data[0]["content"].substring(3, endOfContent) + ' https://larry-cherry.github.io/QuoteMachine/'}">
+  <i class="fa fa-twitter"></i>
+Tweet</a>`
     var es6Quote = `<div class="animated fadeIn text-primary"> ${server_data[0]["content"]}
-     <br><h3 class="pull-right">${server_data[0]["title"]}</h3></div>`;
+     <br><h3 class="pull-right">${tweet} ${server_data[0]["title"]}</h3></div>`;
     document.getElementById("quote-container").innerHTML = es6Quote;
     setTimeout(enableButton, 100)
   }
@@ -21,7 +26,13 @@ $(document).ready(function(){
       cache: false,
     }).done(function(server_data){
       console.log("success" + server_data);
-      changeQuote(server_data);
+      if (server_data[0]["content"].length >= 96) {
+        console.log("String to Long for Twitter")
+        getQuote();
+      }
+      else {
+        changeQuote(server_data);
+      }
       // debugger;
     }).fail(function(jqXHR, textStatus, errorThrown){
       console.log("fail" + errorThrown);
