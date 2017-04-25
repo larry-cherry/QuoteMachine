@@ -5,6 +5,14 @@
 	/*margin: auto;*/
 	display: block;
 	padding: 20px;
+	font-family: Lobster, cursor;
+	font-size: 2em;
+}
+html, body{
+    height: 100%;
+}
+.container{
+	margin-top: 20%;
 }
 
 body{
