@@ -8,7 +8,7 @@ $(document).ready(function(){
     // debugger;
     var endOfContent = server_data[0]["content"].length - 5
     var tweet = `<a id="tweet" class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text=${server_data[0]["content"].substring(3, endOfContent) + ' https://larry-cherry.github.io/QuoteMachine/'}">
+  href="https://twitter.com/intent/tweet?text=${server_data[0]["content"].substring(3, endOfContent) + ' https://larry-cherry.github.io/QuoteMachine/'}" target="_blank">
   <i class="fa fa-twitter"></i>
 Tweet</a>`
     var es6Quote = `<div class="animated fadeIn text-primary"> ${server_data[0]["content"]}
