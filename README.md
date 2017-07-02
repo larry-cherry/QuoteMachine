@@ -1,5 +1,5 @@
 # QuoteMachine
-![alt text](QuoteMachine.png)
+
 __**Technologies Used**__
 * Bootstrap
 * Animate.css
