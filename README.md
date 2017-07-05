@@ -6,7 +6,7 @@ __**Technologies Used**__
 * JQuery
 * ES6
 * Google Fonts
-* <a href="https://quotesondesign.com" target="_blank">Quotesondesign API</a>
+* [Quotesondesign](https://quotesondesign.com)
 
 To see a live view of my project visit my [QuoteMachine](https://larry-cherry.github.io/QuoteMachine/)
 
